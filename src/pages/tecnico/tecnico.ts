@@ -5,7 +5,7 @@ import { Usuario } from '../../models/usuario.model';
 import { AngularFireList } from 'angularfire2/database';
 import { first } from 'rxjs/operators';
 import { CadastroLoginPage } from '../cadastro-login/cadastro-login';
-
+//moisesconte
 
 @IonicPage()
 @Component({
