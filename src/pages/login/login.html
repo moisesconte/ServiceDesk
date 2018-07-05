@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="roxo">
+    <ion-title style="text-align: center;">Autenticação</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="roxo_claro">
+    <div style="text-align: center; color: white;">
+      <p>Unimed Sudoeste de Minas</p>
+      <p>Servicedesk</p>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+ 
+<ion-content style="margin: 0px;">
+
+
+  <div class="container">
+
+
+    <div class="box">
+      <form [formGroup]="loginForm" (ngSubmit)="signInWithEmailPassword(); $event.preventDefault()">
+
+        <ion-item style="padding-right: 30px;">
+          <ion-icon ios="ios-person" md="md-person" item-left></ion-icon>
+          <ion-label color="dark" floating>Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item style="padding-right: 30px;">
+          <ion-icon ios="ios-lock" md="md-lock" item-left></ion-icon>
+          <ion-label color="dark" floating>Senha</ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
+
+        <div style="padding-left: 10px; padding-right: 10px;">
+          <button class="btnLogar" ion-button block color="verde_institucional" type="submit" [disabled]="loginForm.invalid">
+            Logar
+          </button>
+        </div>
+
+      </form>
+      <div text-center>
+        <button class="link_cadastrar" ion-button clear small color="roxo" (click)="cadastrar()">Não tem cadastro? Cadastre-se aqui.</button>
+        <button text-align: center class="link_recuperar" ion-button clear small color="roxo" (click)="recuperarSenha()">Esqueci minha senha.</button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="roxo">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center;">Prioridades</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p *ngIf="prioridades == 0">Nenhuma prioridade cadastrada...</p>
+
+  <div class="container">
+
+    <div class="box">
+
+      <ion-list *ngFor="let prioridade of prioridades">
+        <ion-item-sliding>
+          <ion-item>
+            <h2>{{prioridade.nome}}</h2>
+          </ion-item>
+          <ion-item-options side="rigth">
+            <button ion-button color="verde_institucional" (click)="editarPrioridade(prioridade)">
+              <ion-icon name="create"></ion-icon>
+              Editar
+            </button>
+            <button ion-button color="danger">
+              <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+              Excluir
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+
+      <ion-fab right bottom>
+        <button ion-fab (click)="novaPrioridade()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-fab>
+    </div>
+
+  </div>
+
+</ion-content>

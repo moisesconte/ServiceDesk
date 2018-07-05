@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="roxo">
+    <ion-title>cadastro-subcategoria</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="container">
+
+    <div class="box">
+
+      <h1 class="titulo">Nova Subcategoria</h1>
+
+      <ion-list>
+        <form [formGroup]="form" (ngSubmit)="gravarSubcategoria(); $event.preventDefault()">
+
+          <ion-item>
+            <ion-label color="dark">Categoria</ion-label>
+            <ion-select formControlName="categoria_key" [selectOptions]="categoriaAlertOpts">
+              <ion-option *ngFor="let categoria of categorias" [value]="categoria.$key" (ionSelect)="categoriaSelecionada($event)">{{categoria.nome}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="dark" floating>Subcategoria</ion-label>
+            <ion-input type="text" formControlName="subcategoria"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="dark">Prioridade</ion-label>
+            <ion-select formControlName="prioridade_key" [selectOptions]="prioridadeAlertOpts">
+              <ion-option *ngFor="let prioridade of prioridades" [value]="prioridade.$key" (ionSelect)="prioridadeSelecionada($event)">{{prioridade.nome}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="dark" floating>Descrição</ion-label>
+            <ion-textarea type="text" formControlName="descricao"></ion-textarea>
+          </ion-item>
+
+
+          <div class="btnCadastrar">
+            <button ion-button color="verde_institucional" type="submit" [disabled]="!form.valid">
+              Cadastrar
+            </button>
+          </div>
+
+        </form>
+      </ion-list>
+
+    </div>
+
+  </div>
+
+</ion-content>

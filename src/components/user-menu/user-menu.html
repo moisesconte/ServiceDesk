@@ -1,0 +1,20 @@
+<ion-content>
+
+  <user-info [user]="currentUser" [isMenu]="true"></user-info>
+
+  <ion-list no-lines>
+    <button ion-item icon-right detail-none menuClose="menu" (click)="onProfile()">
+      Perfil
+      <ion-icon name="person" item-end></ion-icon>
+    </button>
+
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      {{p.title}}
+    </button>
+
+    <button ion-item icon-right detail-none menuClose="menu" (click)="onLogout()">
+      Sair
+      <ion-icon name="log-out" item-end></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>

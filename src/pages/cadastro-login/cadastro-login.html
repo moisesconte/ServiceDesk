@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="roxo">
+    <ion-title style="text-align: center;">Novo Cadastro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="container">
+
+    <div class="box">
+
+      <h1 class="titulo">Cadastro de técnicos e usuários!</h1>
+      <br>
+      <p class="titulo">Preencha os dados abaixo para realizar o cadastro.</p>
+
+      <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar(); $event.preventDefault()">
+
+        <ion-item>
+          <ion-label color="dark" floating>Nome</ion-label>
+          <ion-input type="text" formControlName="nome"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!usuario.$key">
+          <ion-label color="dark" floating>Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!usuario.$key">
+          <ion-label color="dark" floating>Senha</ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark">Perfil</ion-label>
+          <ion-select formControlName="perfil" [selectOptions]="perfilAlertOpts">
+            <ion-option value="Tecnico">Técnico</ion-option>
+            <ion-option value="Usuario">Usuário</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Usuário Ativo</ion-label>
+          <ion-toggle checked="false" formControlName="situacao"></ion-toggle>
+        </ion-item>
+
+        <div class="btnCadastrar">
+          <button ion-button color="verde_institucional" type="submit" [disabled]="cadastroForm.invalid">
+            Salvar
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</ion-content>

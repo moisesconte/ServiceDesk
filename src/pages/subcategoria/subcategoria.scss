@@ -1,0 +1,26 @@
+page-subcategoria {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+  }
+  .box {
+    width: 600px;
+    height: 600px;
+    background: #fff;
+  }
+  .titulo {
+    text-align: center;
+  }
+  .btnCadastrar {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

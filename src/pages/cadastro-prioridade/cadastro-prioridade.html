@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="roxo">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center;">Cadastro de Prioridades</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="container">
+
+    <div class="box">
+
+      <h1 class="titulo">Nova Prioridade</h1>
+
+      <form [formGroup]="form">
+
+        <ion-item>
+          <ion-label color="dark" floating>Prioridade</ion-label>
+          <ion-input type="text" formControlName="nome"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" floating>Descrição</ion-label>
+          <ion-textarea type="text" formControlName="descricao"></ion-textarea>
+        </ion-item>
+
+        <div class="btnCadastrar">
+          <button ion-button color="verde_institucional" type="submit" [disabled]="!form.valid" (click)="gravar()">
+            Cadastrar
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</ion-content>
