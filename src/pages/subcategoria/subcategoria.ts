@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroSubcategoriaPage } from '../cadastro-subcategoria/cadastro-subcategoria';
 import { Subcategoria } from '../../models/subcategoria.model';
 import { SubcategoriaService } from '../../providers/subcategoria/subcategoria.service';
-
+//moisesasdfffffffffffffffffffffffdvsdsdgsdsd
 
 @IonicPage()
 @Component({
